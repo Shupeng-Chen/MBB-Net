@@ -1,0 +1,37 @@
+===== Python =====
+Python 3.8.18
+
+===== Core Python packages =====
+python = 3.8.18 (default, Sep 11 2023, 13:40:15) 
+[GCC 11.2.0]
+torch = 2.4.1+cu121
+torch.version.cuda = 12.1
+cudnn = 90100
+numpy = 1.24.3
+PyYAML = 6.0
+tqdm = 4.65.0
+open3d = 0.17.0
+
+===== Relevant pip packages =====
+ninja                     1.13.0
+numpy                     1.24.3
+open3d                    0.17.0
+pytorch-lightning         0.7.1
+PyYAML                    6.0
+scipy                     1.10.1
+setuptools                60.2.0
+torch                     2.4.1+cu121
+torchaudio                2.4.1+cu121
+torchvision               0.19.1+cu121
+tqdm                      4.65.0
+wheel                     0.44.0
+
+===== CUDA compiler =====
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2023 NVIDIA Corporation
+Built on Fri_Sep__8_19:17:24_PDT_2023
+Cuda compilation tools, release 12.3, V12.3.52
+Build cuda_12.3.r12.3/compiler.33281558_0
+
+===== GCC =====
+gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0

@@ -1,0 +1,31 @@
+{
+  "dataset": "ShapeNet-55",
+  "mode": "official_symmcompletion_baseline",
+  "checkpoint": {
+    "path": "checkpoints/SymmCompletion/ShapeNet55/baseline/ckpt-best.pth",
+    "sha256": "137ad2fac429146832f3c3b2fd5719a24770143f65f5699ab665c143a612f923"
+  },
+  "source_precision_note": "The historical official SymmCompletion logs retain each difficulty Overall row to 3 decimal places. Therefore the baseline reference is locked to the precision displayed in the paper; additional decimal digits are intentionally not fabricated.",
+  "difficulty_overall_from_logs": {
+    "simple": {
+      "f1": 0.582,
+      "cd_l1": 7.352,
+      "cd_l2": 0.343
+    },
+    "moderate": {
+      "f1": 0.588,
+      "cd_l1": 8.590,
+      "cd_l2": 0.535
+    },
+    "hard": {
+      "f1": 0.511,
+      "cd_l1": 12.407,
+      "cd_l2": 1.181
+    }
+  },
+  "paper_display_average": {
+    "f1": 0.5603,
+    "cd_l1": 9.4497,
+    "cd_l2": 0.6863
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "dataset": "ShapeNet-55",
+  "experiment": "SymmCompletion cross-backbone transfer",
+  "views_per_difficulty": 8,
+  "checkpoints": {
+    "baseline": {
+      "path": "checkpoints/SymmCompletion/ShapeNet55/baseline/ckpt-best.pth",
+      "sha256": "137ad2fac429146832f3c3b2fd5719a24770143f65f5699ab665c143a612f923",
+      "type": "official SymmCompletion pretrained"
+    },
+    "no_bridge": {
+      "path": "checkpoints/SymmCompletion/ShapeNet55/no_bridge/ckpt-best.pth",
+      "sha256": "5f95558396884735ac4885eb82a73fa255e34854a2ec3210137f1078e52d227b",
+      "type": "20-epoch transfer checkpoint"
+    },
+    "ours": {
+      "path": "checkpoints/SymmCompletion/ShapeNet55/ours/ckpt-best.pth",
+      "sha256": "cbac28ca63f2cfb0d24c07e1ed606d5e6b4d07d758909287413ca4837fccb8bc",
+      "type": "20-epoch MBB transfer checkpoint"
+    }
+  },
+  "transfer_protocol": {
+    "epochs": 20,
+    "batch_size": 16,
+    "eval_batch_size": 8,
+    "seed": 42,
+    "learning_rate": 0.0001,
+    "backbone_lr_scale": 0.1,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 5,
+    "freeze_backbone_epochs": 5,
+    "gradient_clip": 1.0,
+    "checkpoint_selection": "minimum taxonomy-macro CDL2"
+  },
+  "paper_results": {
+    "no_bridge": {
+      "f1": 0.5597142605135952,
+      "cd_l1": 9.371536782727073,
+      "cd_l2": 0.6755114964867083,
+      "accuracy": 0.8276288267731507
+    },
+    "ours": {
+      "f1": 0.5603298131019212,
+      "cd_l1": 9.3767290230013,
+      "cd_l2": 0.6727737290341379,
+      "accuracy": 0.8674969892882044
+    },
+    "baseline": {
+      "f1": 0.5603,
+      "cd_l1": 9.4497,
+      "cd_l2": 0.6863,
+      "precision": "paper_display",
+      "reference": "baseline_display_reference.json"
+    }
+  }
+}

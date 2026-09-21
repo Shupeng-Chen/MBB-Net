@@ -1,0 +1,77 @@
+MBB-Net canonical PCN lineage
+=============================
+
+Reason for rerun
+----------------
+The previous PCN MBB result around CD-L1 x1000 ~= 7.43 was discarded
+after the PCN ablation protocol was rechecked while synchronizing the
+PCN and ShapeNet-55 ablation tables.
+
+Final canonical PCN training
+----------------------------
+Training script:
+scripts/Ablation/PCN_ablation/train_pcn_ours_clean.py
+
+Ablation entry:
+scripts/Ablation/PCN_ablation/run_ablation.py --mode ours
+
+Canonical MBB forward:
+G2S:
+    sem_feat = sem_attn(
+        sem_token,
+        geo_tokens.detach()
+    )
+
+S2G:
+    geo_feat = geo_attn(
+        geo_tokens,
+        sem_token
+    )
+
+The two directions are computed in parallel from the original tokens.
+Both residual gates and LayerNorm outputs are retained.
+
+Final checkpoint
+----------------
+checkpoints/PCN/pcn_mbb_ablation_ours_best.pth
+
+SHA256:
+b32d7a03dd759741ded8ca22b4fb48e60d7f5039cee120050229875058f36940
+
+Final PCN official evaluation
+-----------------------------
+CD-L1 x1000 = 7.1361796830
+Paper CD     = 7.13
+F1@1%        = 0.7973017784
+Accuracy     = 0.9508333333
+Paper Acc    = 95.08%
+
+Downstream assets regenerated from this canonical PCN model
+-----------------------------------------------------------
+1. Framework-figure airplane stage visualization
+2. PCN completion qualitative visualization
+3. KITTI zero-shot evaluation
+4. KITTI qualitative visualization
+
+KITTI protocol
+--------------
+The same PCN canonical checkpoint is used directly.
+No KITTI fine-tuning.
+No ShapeNetCars fine-tuning.
+No target-domain adaptation.
+
+Final KITTI MBB-Net:
+Fidelity exact = 1.15131092670
+MMD exact      = 0.78906610997
+
+Paper display:
+Fidelity = 1.1513
+MMD      = 0.7891
+
+Historical results
+------------------
+The old ~7.43 PCN result is NOT part of the final release contract.
+
+Historical PCN G2S / Full / S2G / No-Bridge experiments retain their
+own original definitions and must NOT be silently replaced by the
+canonical Ours forward.

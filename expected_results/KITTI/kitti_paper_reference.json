@@ -1,0 +1,79 @@
+{
+  "evaluator_version": "KITTI_PoinTr_official_equivalent_v3_per_GT_min_CD_L2_ignore_zero_padding",
+  "protocol": {
+    "num_samples": 2401,
+    "num_gt_references": 5927,
+    "gt_composition": [
+      "train",
+      "test",
+      "val"
+    ],
+    "gt_points": 16384,
+    "output_points": 16384,
+    "mmd_backend": "exact_batch",
+    "fd_definition": "one-way CD-L2 from input to prediction",
+    "mmd_definition": "minimum symmetric CD-L2 from prediction to every complete ShapeNetCars reference",
+    "input_policy": "same 2401 KITTI inputs across methods",
+    "adaptation": "zero-shot; no KITTI adaptation for MBB-Net"
+  },
+  "results": [
+    {
+      "method": "PoinTr",
+      "source_artifact": "PoinTr_Official_FixedInput/official_pointr_metric_result.json",
+      "num_samples": 2401,
+      "fd_l2_x1000": 0.0,
+      "mmd_cd_l2_x1000": 32.17988817441578,
+      "paper_fd_4dp": 0.0,
+      "paper_mmd_4dp": 32.1799
+    },
+    {
+      "method": "SnowflakeNet",
+      "source_artifact": "SnowflakeNet_Official_FixedInput/official_pointr_metric_result.json",
+      "num_samples": 2401,
+      "fd_l2_x1000": 0.05351645593335344,
+      "mmd_cd_l2_x1000": 0.8636657641461659,
+      "paper_fd_4dp": 0.0535,
+      "paper_mmd_4dp": 0.8637
+    },
+    {
+      "method": "SeedFormer",
+      "source_artifact": "SeedFormer_Official_FixedInput/official_pointr_metric_result.json",
+      "num_samples": 2401,
+      "fd_l2_x1000": 0.19709148544109598,
+      "mmd_cd_l2_x1000": 1.2145444374727004,
+      "paper_fd_4dp": 0.1971,
+      "paper_mmd_4dp": 1.2145
+    },
+    {
+      "method": "SymmCompletion",
+      "source_artifact": "Symm_Official_FixedInput/official_pointr_metric_result.json",
+      "num_samples": 2401,
+      "fd_l2_x1000": 1.197558831732326,
+      "mmd_cd_l2_x1000": 2.722590843446427,
+      "paper_fd_4dp": 1.1976,
+      "paper_mmd_4dp": 2.7226
+    },
+    {
+      "method": "Completion-Only",
+      "source_artifact": "MBB_CompOnly_PCN_FixedInput/official_pointr_metric_result.json",
+      "num_samples": 2401,
+      "fd_l2_x1000": 1.0180427590680878,
+      "mmd_cd_l2_x1000": 0.7528334427342751,
+      "paper_fd_4dp": 1.018,
+      "paper_mmd_4dp": 0.7528
+    },
+    {
+      "method": "MBB-Net",
+      "source_artifact": "MBB_Ours_PCN_FixedInput/official_pointr_metric_result.json",
+      "num_samples": 2401,
+      "fd_l2_x1000": 1.1513109267036241,
+      "mmd_cd_l2_x1000": 0.7890661099725099,
+      "paper_fd_4dp": 1.1513,
+      "paper_mmd_4dp": 0.7891
+    }
+  ],
+  "notes": [
+    "Values were reconstructed from the already-computed per-method official-equivalent result JSON files; no metric was recomputed by this packaging step.",
+    "Legacy batch-averaged MMD records are not used for paper reporting."
+  ]
+}

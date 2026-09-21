@@ -1,0 +1,16 @@
+{
+  "dataset": "PCN test",
+  "objects": 1200,
+  "checkpoint_sha256": "b32d7a03dd759741ded8ca22b4fb48e60d7f5039cee120050229875058f36940",
+  "seed": 42,
+  "expected_exact": {
+    "cd_l1_x1000": 7.136179683009783,
+    "f1_at_1pct": 0.7973017784456412,
+    "accuracy": 0.9508333333333333
+  },
+  "paper_display": {
+    "cd_l1_x1000_4dp": 7.1362,
+    "cd_l1_x1000_2dp": 7.14,
+    "accuracy_percent_2dp": 95.08
+  }
+}

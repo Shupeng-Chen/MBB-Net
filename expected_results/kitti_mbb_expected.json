@@ -1,0 +1,10 @@
+{
+  "evaluator_version": "KITTI_PoinTr_official_equivalent_v3_per_GT_min_CD_L2_ignore_zero_padding",
+  "num_samples": 2401,
+  "num_gt_references": 5927,
+  "output_points": 16384,
+  "fd_l2_x1000": 1.1513109267036241,
+  "mmd_cd_l2_x1000": 0.7890661099725099,
+  "paper_fd_4dp": 1.1513,
+  "paper_mmd_4dp": 0.7891
+}

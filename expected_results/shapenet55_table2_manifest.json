@@ -1,0 +1,71 @@
+{
+  "dataset": "ShapeNet-55",
+  "num_objects": 10518,
+
+  "variants": {
+    "baseline": {
+      "checkpoint": "checkpoints/ShapeNet/ShapeNet55/baseline/best_model.pth",
+      "checkpoint_sha256": "37ca7509faa949cf3c4557fd7f02eaf29d4c13dcb0118dbaf084452028b79d15",
+      "canonical_result_source": "paper/official_shapenet_eval/ShapeNet55_baseline_full.json",
+      "cd_l2_x1000_average": 1.501183710841883,
+      "f1_at_1pct_average": 0.35301977515272304
+    },
+
+    "cls_only": {
+      "checkpoint": "checkpoints/ShapeNet/ShapeNet55/cls_only/best_model.pth",
+      "checkpoint_sha256": "5b6d14dd35046938591521c51bcca2d3b2b665cb08be6059dfb66cd3ab034f16",
+      "canonical_result_source": "paper/official_shapenet_eval/ShapeNet55_cls_only_full.json",
+      "accuracy_object_mean_logits": 0.8146986119034036
+    },
+
+    "no_bridge": {
+      "checkpoint": "checkpoints/ShapeNet/ShapeNet55/no_bridge/best_model.pth",
+      "checkpoint_sha256": "5a1c2b8c31cf0ff2046c91f484f40c59b3f96d957c6db32747376e9a1d666b7c",
+      "canonical_result_source": "paper/official_shapenet_eval/ShapeNet55_no_bridge_full.json",
+      "cd_l2_x1000_average": 1.5067232005441962,
+      "f1_at_1pct_average": 0.35263543914016454,
+      "accuracy_object_mean_logits": 0.8165050389807949
+    },
+
+    "full": {
+      "checkpoint": "checkpoints/ShapeNet/ShapeNet55/full/best_model.pth",
+      "checkpoint_sha256": "1bfc68daeb01d6b5c3a4645d60b17751fd86503db73b107f6fd59f876182208f",
+      "canonical_result_source": "paper/official_shapenet_eval/ShapeNet55_full_full.json",
+      "cd_l2_x1000_average": 2.3053170531670486,
+      "f1_at_1pct_average": 0.31035751780058435,
+      "accuracy_object_mean_logits": 0.897794257463396
+    },
+
+    "g2s": {
+      "checkpoint": "checkpoints/ShapeNet/ShapeNet55/g2s/best_model.pth",
+      "checkpoint_sha256": "e669f3097eb9b9e25e07dd05d045cf103ecb6fd46c5a19a07b261cf297174cc6",
+      "canonical_result_source": "paper/official_shapenet_eval/ShapeNet55_g2s_full.json",
+      "cd_l2_x1000_average": 1.6083139901627679,
+      "f1_at_1pct_average": 0.33883264538362573,
+      "accuracy_object_mean_logits": 0.8967484312606959
+    },
+
+    "s2g": {
+      "checkpoint": "checkpoints/ShapeNet/ShapeNet55/s2g/best_model.pth",
+      "checkpoint_sha256": "71633b4e66ce719d99910f8335773eaa125151fc3a23231ea3643c8da1c6597b",
+      "canonical_result_source": "paper/official_shapenet_eval/ShapeNet55_s2g_full.json",
+      "cd_l2_x1000_average": 1.501495280526079,
+      "f1_at_1pct_average": 0.35346874240460785,
+      "accuracy_object_mean_logits": 0.8156493629967675
+    },
+
+    "ours": {
+      "checkpoint": "checkpoints/ShapeNet/ShapeNet55/ours/best_model.pth",
+      "checkpoint_sha256": "4be6989cf1754381b4c6826a9c53f36bd9adceff9c7d3013ea36bce24a4de55d",
+      "canonical_result_source": "paper/repro_final/shapenet55/ShapeNet55_ours_full.json",
+      "cd_l2_x1000_average": 1.5171285223165543,
+      "f1_at_1pct_average": 0.3532713261717712,
+      "accuracy_object_mean_logits": 0.8678455980224378
+    }
+  },
+
+  "notes": {
+    "ours_official_current_invalid_for_table2": true,
+    "reason": "paper/official_shapenet_eval/ShapeNet55_ours_full.json currently contains pcgrad_ours_aligned results and must not be used as the Table-2 MBB reference."
+  }
+}

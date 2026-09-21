@@ -1,0 +1,39 @@
+# ============================================================
+# Generated Python / CUDA artifacts
+# ============================================================
+__pycache__/
+*.py[cod]
+*.so
+*.o
+build/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# ============================================================
+# Local experiment / audit scratch space
+# ============================================================
+tests/_*/
+_stage2_snapshot/
+outputs/
+runs/
+wandb/
+*.pid
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ============================================================
+# Pretrained checkpoint binaries
+# Distributed separately via release assets / external storage.
+# Keep checkpoints/README.md and checkpoints/MANIFEST.sha256.
+# ============================================================
+checkpoints/**/*.pth
+checkpoints/**/*.pt
+checkpoints/**/*.ckpt
+
+# Runtime verification reports
+expected_results/audit/

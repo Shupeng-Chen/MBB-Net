@@ -1,0 +1,78 @@
+{
+  "protocol": "PCN SnowflakeNet official deterministic evaluation",
+  "checkpoint_sha256": "b32d7a03dd759741ded8ca22b4fb48e60d7f5039cee120050229875058f36940",
+  "seed": 42,
+  "objects": 1200,
+  "cd_l1_x1000_macro": 7.136179683009783,
+  "cd_l1_x1000_micro": 7.136179683009783,
+  "f1_at_1pct_macro": 0.7973017784456412,
+  "f1_at_1pct_micro": 0.7973017784456412,
+  "accuracy_micro": 0.9508333333333333,
+  "accuracy_macro": 0.9508333333333333,
+  "per_class": [
+    {
+      "taxonomy_id": "02691156",
+      "class_name": "plane",
+      "count": 150,
+      "cd_l1_x1000": 4.118200192451477,
+      "f1_at_1pct": 0.9421548843383789,
+      "accuracy": 0.9733333333333334
+    },
+    {
+      "taxonomy_id": "02933112",
+      "class_name": "cabinet",
+      "count": 150,
+      "cd_l1_x1000": 9.194404586156208,
+      "f1_at_1pct": 0.6922902874151866,
+      "accuracy": 0.9466666666666667
+    },
+    {
+      "taxonomy_id": "02958343",
+      "class_name": "car",
+      "count": 150,
+      "cd_l1_x1000": 7.925661938985189,
+      "f1_at_1pct": 0.7529523324966431,
+      "accuracy": 1.0
+    },
+    {
+      "taxonomy_id": "03001627",
+      "class_name": "chair",
+      "count": 150,
+      "cd_l1_x1000": 7.67308277130127,
+      "f1_at_1pct": 0.7698774526516596,
+      "accuracy": 0.9266666666666666
+    },
+    {
+      "taxonomy_id": "03636649",
+      "class_name": "lamp",
+      "count": 150,
+      "cd_l1_x1000": 6.098074809710185,
+      "f1_at_1pct": 0.851530100107193,
+      "accuracy": 0.9333333333333333
+    },
+    {
+      "taxonomy_id": "04256520",
+      "class_name": "couch",
+      "count": 150,
+      "cd_l1_x1000": 9.210676193237305,
+      "f1_at_1pct": 0.6784258093436559,
+      "accuracy": 0.9133333333333333
+    },
+    {
+      "taxonomy_id": "04379243",
+      "class_name": "table",
+      "count": 150,
+      "cd_l1_x1000": 6.506351792017619,
+      "f1_at_1pct": 0.86173797249794,
+      "accuracy": 0.94
+    },
+    {
+      "taxonomy_id": "04530566",
+      "class_name": "watercraft",
+      "count": 150,
+      "cd_l1_x1000": 6.362985180219014,
+      "f1_at_1pct": 0.8294453887144725,
+      "accuracy": 0.9733333333333334
+    }
+  ]
+}

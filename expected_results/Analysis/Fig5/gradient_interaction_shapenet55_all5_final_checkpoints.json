@@ -1,0 +1,32 @@
+{
+  "NO_BRIDGE": {
+    "path": "checkpoints/ShapeNet/ShapeNet55/no_bridge/best_model.pth",
+    "sha256": "5a1c2b8c31cf0ff2046c91f484f40c59b3f96d957c6db32747376e9a1d666b7c",
+    "parameter_coverage_percent": 100.0,
+    "metadata": {}
+  },
+  "FULL": {
+    "path": "checkpoints/ShapeNet/ShapeNet55/full/best_model.pth",
+    "sha256": "1bfc68daeb01d6b5c3a4645d60b17751fd86503db73b107f6fd59f876182208f",
+    "parameter_coverage_percent": 100.0,
+    "metadata": {}
+  },
+  "G2S": {
+    "path": "checkpoints/ShapeNet/ShapeNet55/g2s/best_model.pth",
+    "sha256": "e669f3097eb9b9e25e07dd05d045cf103ecb6fd46c5a19a07b261cf297174cc6",
+    "parameter_coverage_percent": 100.0,
+    "metadata": {}
+  },
+  "S2G": {
+    "path": "checkpoints/ShapeNet/ShapeNet55/s2g/best_model.pth",
+    "sha256": "71633b4e66ce719d99910f8335773eaa125151fc3a23231ea3643c8da1c6597b",
+    "parameter_coverage_percent": 100.0,
+    "metadata": {}
+  },
+  "OURS": {
+    "path": "checkpoints/ShapeNet/ShapeNet55/ours/best_model.pth",
+    "sha256": "4be6989cf1754381b4c6826a9c53f36bd9adceff9c7d3013ea36bce24a4de55d",
+    "parameter_coverage_percent": 100.0,
+    "metadata": {}
+  }
+}

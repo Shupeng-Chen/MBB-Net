@@ -1,0 +1,24 @@
+# ==========================================
+# ShapeNet 34/21 联合配置文件
+# ==========================================
+DATASET_NAME: 'ShapeNet34_21'
+# 底层点云复用 55 的实体文件
+DATA_ROOT: ''
+# 官方 TXT 划分文件的根目录 (指向你的 my_data)
+SPLIT_ROOT: 'data/splits'
+
+NUM_PARTIAL_POINTS: 2048
+NUM_GT_POINTS: 8192
+
+NUM_PC: 256
+NUM_P0: 512
+UP_FACTORS: [1, 4, 4]
+
+BATCH_SIZE: 16
+NUM_WORKERS: 8
+MAX_EPOCH: 300
+LR: 0.0001
+STEP_SIZE: 50
+GAMMA: 0.5
+WEIGHT_DECAY: 0.0001
+ALPHA: 0.4

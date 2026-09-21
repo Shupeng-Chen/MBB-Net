@@ -1,0 +1,6 @@
+# MBB-Net Python dependencies.
+# Install the reference PyTorch build before installing these packages.
+
+-r requirements/pcn.txt
+-r requirements/kitti_metric.txt
+-r requirements/symmcompletion.txt

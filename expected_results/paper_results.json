@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "project": "MBB-Net",
+    "purpose": "Paper-result reproducibility contract",
+    "note": "Official paper-result metrics and training-dynamics metrics must be treated as separate evaluation protocols."
+  },
+  "pcn": {
+    "mbb": {
+      "cd_l1_x1000_exact": 7.136179683,
+      "cd_l1_x1000_paper": 7.13,
+      "f1_at_1pct_exact": 0.7973017784,
+      "accuracy_exact": 0.9508333333,
+      "accuracy_percent_paper": 95.08
+    }
+  },
+  "shapenet55_ablation": {
+    "completion_only": {
+      "f1": 0.353,
+      "cd_avg": 1.5012,
+      "simple": 0.7631,
+      "moderate": 1.2915,
+      "hard": 2.4489
+    },
+    "classification_only": {
+      "accuracy_percent": 81.47
+    },
+    "no_bridge": {
+      "accuracy_percent": 81.65,
+      "f1": 0.3526,
+      "cd_avg": 1.5067,
+      "simple": 0.7629,
+      "moderate": 1.3008,
+      "hard": 2.4565
+    },
+    "full": {
+      "accuracy_percent": 89.78,
+      "f1": 0.3104,
+      "cd_avg": 2.3053,
+      "simple": 1.2437,
+      "moderate": 2.0575,
+      "hard": 3.6147
+    },
+    "g2s": {
+      "accuracy_percent": 89.67,
+      "f1": 0.3388,
+      "cd_avg": 1.6083,
+      "simple": 0.8871,
+      "moderate": 1.4189,
+      "hard": 2.5189
+    },
+    "s2g": {
+      "accuracy_percent": 81.56,
+      "f1": 0.3535,
+      "cd_avg": 1.5015,
+      "simple": 0.765,
+      "moderate": 1.2924,
+      "hard": 2.4471
+    },
+    "mbb": {
+      "accuracy_percent": 86.78,
+      "f1": 0.3533,
+      "cd_avg": 1.5171,
+      "simple": 0.7608,
+      "moderate": 1.2929,
+      "hard": 2.4976,
+      "official_exact": {
+        "cd_avg": 1.5171285223,
+        "f1": 0.3532713262,
+        "accuracy_percent": 86.78456
+      }
+    }
+  },
+  "shapenet55_pcgrad": {
+    "s2g": {
+      "cd_avg": 1.5015,
+      "f1": 0.3535,
+      "accuracy_percent": 81.56
+    },
+    "mbb": {
+      "cd_avg": 1.5171,
+      "f1": 0.3533,
+      "accuracy_percent": 86.78
+    },
+    "pcgrad_mbb": {
+      "cd_avg": 1.4874,
+      "f1": 0.3535,
+      "accuracy_percent": 86.72,
+      "official_exact": {
+        "cd_avg": 1.48743222,
+        "f1": 0.3534591503,
+        "accuracy_percent": 86.71801
+      }
+    }
+  },
+  "fig5_gradient": {
+    "num_objects": 220,
+    "seed": 42,
+    "parameter_space": [
+      "geometry_encoder",
+      "semantic_encoder",
+      "mbb"
+    ],
+    "excluded": [
+      "decoder",
+      "classifier"
+    ],
+    "no_bridge": {
+      "adverse": 0.0,
+      "overlap": 0.0
+    },
+    "full": {
+      "adverse": 0.108294,
+      "overlap": 0.299046
+    },
+    "g2s": {
+      "adverse": 0.09906,
+      "overlap": 0.413723
+    },
+    "s2g": {
+      "adverse": 0.000931,
+      "overlap": 0.046363
+    },
+    "mbb": {
+      "adverse": 0.000967,
+      "overlap": 0.030135
+    }
+  },
+  "complexity_shapenet55": {
+    "no_bridge": {
+      "total_params_m": 21.622,
+      "active_params_m": 19.517,
+      "flops_g": 18.628,
+      "latency_ms": 11.857,
+      "memory_mib": 219
+    },
+    "full": {
+      "total_params_m": 21.622,
+      "active_params_m": 21.618,
+      "flops_g": 18.632,
+      "latency_ms": 12.145,
+      "memory_mib": 219
+    },
+    "mbb": {
+      "total_params_m": 21.622,
+      "active_params_m": 21.618,
+      "flops_g": 18.632,
+      "latency_ms": 12.011,
+      "memory_mib": 219
+    }
+  },
+  "symmcompletion_transfer": {
+    "baseline": {
+      "cd": 0.6863,
+      "other_metric": 9.4497,
+      "f1": 0.5603
+    },
+    "no_bridge": {
+      "cd": 0.6755,
+      "other_metric": 9.3715,
+      "f1": 0.5597,
+      "accuracy_percent": 82.76
+    },
+    "mbb": {
+      "cd": 0.6728,
+      "other_metric": 9.3767,
+      "f1": 0.5603,
+      "accuracy_percent": 86.75
+    }
+  },
+  "shapenet34_21": {
+    "seen34": {
+      "completion_only": {
+        "cd": 1.3348500378,
+        "f1": 0.3640797478
+      },
+      "no_bridge": {
+        "cd": 1.261122402,
+        "f1": 0.3656045767,
+        "accuracy_percent": 69.38235294
+      },
+      "mbb": {
+        "cd": 1.3210944302,
+        "f1": 0.3628580621,
+        "accuracy_percent": 78.32352941
+      }
+    },
+    "unseen21": {
+      "completion_only": {
+        "cd": 1.9682390773,
+        "f1": 0.3372518652
+      },
+      "no_bridge": {
+        "cd": 1.8565264922,
+        "f1": 0.3385191046
+      },
+      "mbb": {
+        "cd": 1.9421539154,
+        "f1": 0.3363271958
+      }
+    }
+  },
+  "kitti": {
+    "protocol": {
+      "num_samples": 2401,
+      "output_points": 16384,
+      "training_source": "PCN",
+      "kitti_adaptation": false
+    },
+    "pointr": {
+      "fidelity": 0.0,
+      "mmd": 32.1799
+    },
+    "snowflakenet": {
+      "fidelity": 0.0535,
+      "mmd": 0.8637
+    },
+    "seedformer": {
+      "fidelity": 0.1971,
+      "mmd": 1.2145
+    },
+    "symmcompletion": {
+      "fidelity": 1.1976,
+      "mmd": 2.7226
+    },
+    "completion_only": {
+      "fidelity_exact": 1.01804275907,
+      "mmd_exact": 0.75283344273,
+      "fidelity_paper": 1.018,
+      "mmd_paper": 0.7528
+    },
+    "mbb": {
+      "fidelity_exact": 1.1513109267,
+      "mmd_exact": 0.78906610997,
+      "fidelity_paper": 1.1513,
+      "mmd_paper_corrected": 0.7891
+    }
+  }
+}

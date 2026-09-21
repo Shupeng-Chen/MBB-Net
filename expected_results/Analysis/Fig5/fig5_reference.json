@@ -1,0 +1,28 @@
+{
+  "figure": "Figure 5",
+  "dataset": "ShapeNet-55",
+  "description": "Gradient interaction statistics used in the final manuscript figure.",
+  "methods": {
+    "No-Bridge": {
+      "adverse_ratio": 0.0,
+      "overlap_ratio": 0.0
+    },
+    "Full": {
+      "adverse_ratio": 0.108,
+      "overlap_ratio": 0.299
+    },
+    "G2S": {
+      "adverse_ratio": 0.099,
+      "overlap_ratio": 0.414
+    },
+    "S2G": {
+      "adverse_ratio": 0.001,
+      "overlap_ratio": 0.046
+    },
+    "MBB": {
+      "adverse_ratio": 0.001,
+      "overlap_ratio": 0.030
+    }
+  },
+  "note": "These values are frozen paper references. Reproduction scripts should regenerate them from the archived gradient-analysis inputs; no retraining is required."
+}

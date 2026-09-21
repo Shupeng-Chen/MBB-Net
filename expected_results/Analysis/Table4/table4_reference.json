@@ -1,0 +1,33 @@
+{
+  "table": "Table 4",
+  "dataset": "ShapeNet-55",
+  "input_points": 2048,
+  "hardware_reference": "NVIDIA RTX A6000",
+  "methods": {
+    "No-Bridge": {
+      "total_params_M": 21.622,
+      "active_params_M": 19.517,
+      "flops_G": 18.628,
+      "latency_ms": 11.857,
+      "memory_MB": 219
+    },
+    "Full": {
+      "total_params_M": 21.622,
+      "active_params_M": 21.618,
+      "flops_G": 18.632,
+      "latency_ms": 12.145,
+      "memory_MB": 219
+    },
+    "MBB": {
+      "total_params_M": 21.622,
+      "active_params_M": 21.618,
+      "flops_G": 18.632,
+      "latency_ms": 12.011,
+      "memory_MB": 219
+    }
+  },
+  "reproducibility_note": {
+    "params_and_flops": "Expected to reproduce under the same model definition and input configuration.",
+    "latency_and_memory": "Hardware/runtime dependent reference values; exact equality across GPUs, drivers, CUDA versions, clocks, and system load is not required."
+  }
+}

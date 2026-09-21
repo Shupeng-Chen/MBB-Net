@@ -1,0 +1,3 @@
+NAME: ShapeNetCars
+DATA_ROOT: data/PCN/ShapeNetCompletion
+N_POINTS: 16384

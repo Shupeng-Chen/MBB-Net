@@ -1,0 +1,8 @@
+{
+  "dataset": "55",
+  "mode": "cls_only",
+  "num_objects": 10518,
+  "views_per_difficulty": 8,
+  "accuracy_object_mean_logits": 0.8146986119034036,
+  "accuracy_view_average": 0.7832762882677315
+}

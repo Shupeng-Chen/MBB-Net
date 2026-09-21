@@ -1,0 +1,66 @@
+{
+  "protocol": {
+    "training_dataset": "ShapeNet-34",
+    "seen_evaluation": "ShapeNet-34",
+    "unseen_evaluation": "ShapeNet-21",
+    "model_num_classes": 34,
+    "unseen_21_training": false,
+    "note": "The same ShapeNet-34-trained checkpoint is evaluated on both ShapeNet-34 and ShapeNet-21."
+  },
+
+  "checkpoints": {
+    "baseline": {
+      "path": "checkpoints/ShapeNet/ShapeNet34/baseline/best_model.pth",
+      "sha256": "ad13d0a08ef7f454a53e8527d93bc8ccd85f607f22601c866cc8219b35ed2b8c"
+    },
+
+    "no_bridge": {
+      "path": "checkpoints/ShapeNet/ShapeNet34/no_bridge/best_model.pth",
+      "sha256": "ac1da7463bf80183a702292a66435c842adb621026f334fbb6e86c9de2702baf"
+    },
+
+    "ours": {
+      "path": "checkpoints/ShapeNet/ShapeNet34/ours/best_model.pth",
+      "sha256": "1f5bd6003dd2516d0d572ba4d113a3823d34278679c3f3b77c8e908c9e8c16a7",
+      "mbb_mode": "ours"
+    }
+  },
+
+  "paper_results": {
+    "ShapeNet34": {
+      "baseline": {
+        "cd_l2_x1000": 1.3348500377717247,
+        "f1_at_1pct": 0.36407974776729723
+      },
+
+      "no_bridge": {
+        "cd_l2_x1000": 1.2611224020407168,
+        "f1_at_1pct": 0.3656045767289641,
+        "accuracy": 0.6938235294117647
+      },
+
+      "ours": {
+        "cd_l2_x1000": 1.3210944302133558,
+        "f1_at_1pct": 0.36285806211232047,
+        "accuracy": 0.783235294117647
+      }
+    },
+
+    "ShapeNet21": {
+      "baseline": {
+        "cd_l2_x1000": 1.968239077252193,
+        "f1_at_1pct": 0.3372518651716178
+      },
+
+      "no_bridge": {
+        "cd_l2_x1000": 1.856526492208226,
+        "f1_at_1pct": 0.3385191046429277
+      },
+
+      "ours": {
+        "cd_l2_x1000": 1.9421539154353866,
+        "f1_at_1pct": 0.3363271957935619
+      }
+    }
+  }
+}

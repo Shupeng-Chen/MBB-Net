@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "dataset": "ShapeNet-55",
+  "scope": "canonical Table-2 training implementation",
+  "status": "verified_with_documented_cuda_numerical_nondeterminism",
+  "reproducibility_contract": {
+    "dataset_and_protocol": "locked",
+    "model_initialization": "bitwise_exact_in_audited_environment",
+    "first_training_batch": "bitwise_exact_in_audited_environment",
+    "forward_outputs": "bitwise_exact_in_audited_environment",
+    "training_loss": "bitwise_exact_in_audited_environment",
+    "cuda_backward": {
+      "bitwise_exact": false,
+      "reason": "The historical implementation itself is not bitwise deterministic during CUDA backward.",
+      "release_requirement": "Numerical equivalence within the empirical variation of repeated historical runs.",
+      "audit_result": "All five audited canonical modes passed the empirical backward numerical envelope."
+    },
+    "released_checkpoint_evaluation": "reproduces the paper-reported metrics to displayed precision",
+    "full_300_epoch_from_scratch_rerun": "deferred_not_used_as_a_release_blocker"
+  },
+  "canonical_modes_audited": [
+    "baseline",
+    "full",
+    "g2s",
+    "s2g",
+    "ours"
+  ],
+  "sources": {
+    "training_entry": {
+      "path": "reproduce/ShapeNet/ShapeNet55/train_table2.py",
+      "sha256": "c9deb2b1824d27f51e81342c241b6fe79becaddd45f7a7eaa2e648de6dc8f4ec"
+    },
+    "training_dataset": {
+      "path": "data/shapenet55_train.py",
+      "sha256": "66e793976970878975e91000c309347dc5e78ba085eb1e22bc53ffae1f776db9"
+    },
+    "table2_model": {
+      "path": "models/shapenet_table2_model.py",
+      "sha256": "a9c55b451acf22620928ecff00836ec23f0c346139b5e17c111093fa56fe65c4"
+    },
+    "official_evaluator": {
+      "path": "reproduce/ShapeNet/ShapeNet55/eval_table2.py",
+      "sha256": "308b42c9f897e690d2a546bf3eb8bd47ddf8c3ee7a3aff7526f1c405df6af288"
+    }
+  },
+  "archived_audit_evidence": {
+    "training_protocol_provenance": {
+      "archived_filename": "shapenet55_training_protocol_provenance.json",
+      "sha256": "2b532ebc35578663ea7478c575ea1c3b9614a98632febfeab3bed2e042cd0f82"
+    },
+    "training_startline_ab": {
+      "archived_filename": "shapenet55_startline_ab.json",
+      "sha256": "b8a165a56d652fd9101ce67d380201cd9877c6972775ba3c0a7333b390c84924"
+    },
+    "historical_self_repeat": {
+      "archived_filename": "shapenet55_old_selfrepeat_ab.json",
+      "sha256": "6e100be134020eae2709ec110b6920709f43e801229216669ccaf15ba8db31ea"
+    },
+    "backward_numerical_audit": {
+      "archived_filename": "shapenet55_backward_numerical_audit.json",
+      "sha256": "a6e38776bf88e1f770b86fa463ae12102732d10eda2455f1fded6fc4cb1efd42"
+    }
+  },
+  "important_limitations": [
+    "Bitwise-identical gradient tensors are not guaranteed even across repeated executions of the historical code.",
+    "Bitwise-identical parameter trajectories across complete training runs are therefore not claimed.",
+    "Different GPUs, CUDA versions, compilers, or rebuilt CUDA extensions may introduce additional floating-point variation.",
+    "A complete new 300-epoch end-to-end OURS retraining has not yet been used to establish an empirical final-metric tolerance."
+  ]
+}
