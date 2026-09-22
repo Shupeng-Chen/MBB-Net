@@ -1,0 +1,307 @@
+{
+  "figure": "PCN qualitative comparison (Figure 2)",
+  "dataset": "PCN test split",
+  "sample_indices": [
+    {
+      "class": "plane",
+      "dataset_index": 3,
+      "filename": "plane_idx3.png"
+    },
+    {
+      "class": "cabinet",
+      "dataset_index": 160,
+      "filename": "cabinet_idx160.png"
+    },
+    {
+      "class": "car",
+      "dataset_index": 309,
+      "filename": "car_idx309.png"
+    },
+    {
+      "class": "chair",
+      "dataset_index": 452,
+      "filename": "chair_idx452.png"
+    },
+    {
+      "class": "lamp",
+      "dataset_index": 602,
+      "filename": "lamp_idx602.png"
+    },
+    {
+      "class": "couch",
+      "dataset_index": 753,
+      "filename": "couch_idx753.png"
+    },
+    {
+      "class": "table",
+      "dataset_index": 909,
+      "filename": "table_idx909.png"
+    },
+    {
+      "class": "watercraft",
+      "dataset_index": 1061,
+      "filename": "watercraft_idx1061.png"
+    }
+  ],
+  "columns": [
+    "Input",
+    "SnowflakeNet",
+    "PoinTr",
+    "SeedFormer",
+    "SymmCompletion",
+    "CompletionOnly",
+    "Full",
+    "MBB-Net",
+    "GT"
+  ],
+  "artifact_policy": {
+    "external_baselines": "Frozen paper-facing renders from the historical baseline experiments. Raw baseline prediction-coordinate files were not retained.",
+    "internal_modes": "CompletionOnly, Full, and MBB-Net are rendered from the released canonical paper checkpoints using the public PCN qualitative renderer.",
+    "input_and_gt": "Input and GT panels are taken from the canonical MBB-Net three-panel render for the same fixed PCN test sample."
+  },
+  "released_checkpoint_sha256": {
+    "CompletionOnly": "f29e541ff5b581bc99129f358bd64a9aad74498d781eb89dbe160df88a7e2b33",
+    "Full": "73bdc88614f038c66437820ddb77b074f50dff1453ac85ad99a2fd74947a731d",
+    "MBB-Net": "b32d7a03dd759741ded8ca22b4fb48e60d7f5039cee120050229875058f36940"
+  },
+  "files": {
+    "SnowflakeNet": {
+      "plane_idx3.png": {
+        "sha256": "5f59e0658cad520bddc7b85aa317af66a22167e846ff7897e425e5f5f17f2506",
+        "size_bytes": 74519
+      },
+      "cabinet_idx160.png": {
+        "sha256": "bad8bf77c0a3da80f75ff990f8fa2f5698d1ee15aaa169b05cd5481ecba327a5",
+        "size_bytes": 677566
+      },
+      "car_idx309.png": {
+        "sha256": "e927ebead410a16f2a764946b2583dbc847a3ab6cd8fd78e37a24aa2e8db35b6",
+        "size_bytes": 409216
+      },
+      "chair_idx452.png": {
+        "sha256": "8f87dfab3bd5cfd898bda5c1c67a6c3093e28ec4243d06cdd8abdf19d09a314b",
+        "size_bytes": 537227
+      },
+      "lamp_idx602.png": {
+        "sha256": "f6c2e9549e4d3a7c20356f76d5c5245d02c40acf5be70b273d3cb0bda60ca60f",
+        "size_bytes": 238124
+      },
+      "couch_idx753.png": {
+        "sha256": "0f1cc97bd0206b75b62db1263dd725b0e3c712198eea4eb9d2d868fe68650d0e",
+        "size_bytes": 488219
+      },
+      "table_idx909.png": {
+        "sha256": "02628806c977eeeefbbfd4d56d39f9925702349df612e8d516132fe87c133ba0",
+        "size_bytes": 443402
+      },
+      "watercraft_idx1061.png": {
+        "sha256": "61bc1a97234dfed8e435e67d90d67f327849d6bd7745c18464efe8d71e4d1220",
+        "size_bytes": 326706
+      }
+    },
+    "PoinTr": {
+      "plane_idx3.png": {
+        "sha256": "7adec618004e81c77ac3c972ade52a7ee71c6c2802299a3d5e093d2dd4a4aa45",
+        "size_bytes": 76718
+      },
+      "cabinet_idx160.png": {
+        "sha256": "4cc1d9375fd0422e082786ab74e9c6075de9acebfb059df9987870e42306ed3d",
+        "size_bytes": 632954
+      },
+      "car_idx309.png": {
+        "sha256": "3935c7c19a0716d3ef2d16082a2e6f511c0ec1e8434f5ffb7bdcdd511e7b29d0",
+        "size_bytes": 401086
+      },
+      "chair_idx452.png": {
+        "sha256": "e72c33765da308c5653f93651d57bc1e3fa5d0504a1090a41b02e7b215619326",
+        "size_bytes": 512688
+      },
+      "lamp_idx602.png": {
+        "sha256": "b879d2e821ba2fdad5806266128d8030ab1c0dcc8399f85e5f241b0b797f351b",
+        "size_bytes": 237491
+      },
+      "couch_idx753.png": {
+        "sha256": "923baccb4a704aee05c00e878235dce23f90fbf6a764947ea7a392d3c749b8ae",
+        "size_bytes": 462139
+      },
+      "table_idx909.png": {
+        "sha256": "aca427fee3f19e1ce10331432dfd959a9c0dc770e73277eca65e141a67f8ba46",
+        "size_bytes": 412849
+      },
+      "watercraft_idx1061.png": {
+        "sha256": "37ecdb892dae2ef01332d8a90a8d2df027d8a3997ea98d16d3d075efcdd09847",
+        "size_bytes": 313596
+      }
+    },
+    "SeedFormer": {
+      "plane_idx3.png": {
+        "sha256": "7890c55bc23f5cfaaaa1d5eec629a6792ba59b9f76e25d4992d10de70cad0c12",
+        "size_bytes": 73825
+      },
+      "cabinet_idx160.png": {
+        "sha256": "fccaeb5923c57e84d4163d7226f51bebc8bdd84648b8002c1aa941370066781f",
+        "size_bytes": 670239
+      },
+      "car_idx309.png": {
+        "sha256": "3d08978560b0cfcf55c151d868bdbd4c1bec1b83a9cb0517acccaa900390d10c",
+        "size_bytes": 397705
+      },
+      "chair_idx452.png": {
+        "sha256": "d6a7cf2c5bc780a62357235affa9d414cbaf7335ade09e94085b129c218b6bfc",
+        "size_bytes": 529151
+      },
+      "lamp_idx602.png": {
+        "sha256": "256da4fa3dc60d817483efd2817805c439bdabea0d90dd015de84191b7b0af05",
+        "size_bytes": 237025
+      },
+      "couch_idx753.png": {
+        "sha256": "b2759c92b98b935660f6a268d654b548937d8e98ea5029bb60d2d528ad877f4b",
+        "size_bytes": 487960
+      },
+      "table_idx909.png": {
+        "sha256": "4f5f37b6286fc8945c5c1b9cb154d5e4f4f1893697c0dcbc114dd70b2435f242",
+        "size_bytes": 442035
+      },
+      "watercraft_idx1061.png": {
+        "sha256": "7907bba1f6cd9784d96c33176d46b20e0bde3f2152e8eb9f9a0ce2b35e79f8b1",
+        "size_bytes": 321807
+      }
+    },
+    "SymmCompletion": {
+      "plane_idx3.png": {
+        "sha256": "6c8ae8142a3ffdb4b9f3162f163db5bc7fd992645b7be28fc0d59adc4e79911d",
+        "size_bytes": 73414
+      },
+      "cabinet_idx160.png": {
+        "sha256": "d10df95f79dae2197d17620e76898255f0db91932c4bd8beba66326f3e723d31",
+        "size_bytes": 676579
+      },
+      "car_idx309.png": {
+        "sha256": "6e8223241b26a8c9c22611023f16338d47aa76a98d0cdde1fc42ea7b770765ca",
+        "size_bytes": 392424
+      },
+      "chair_idx452.png": {
+        "sha256": "35d1c06fc9c492c7f23c109e9ca005962951211934a31fee34a3f7c4c7515b88",
+        "size_bytes": 530796
+      },
+      "lamp_idx602.png": {
+        "sha256": "d315f23613b4bc7223e0c995c1436f90b167aa5ab64fdb526180c29b944a9fc7",
+        "size_bytes": 229369
+      },
+      "couch_idx753.png": {
+        "sha256": "310b2b2368863bcc92508afc7a5e9c49b4ace55e6d74e449785dadbda824cb3f",
+        "size_bytes": 495018
+      },
+      "table_idx909.png": {
+        "sha256": "ba6eaf67758f15a12d5bcce7222d6c731f879fa488528f9e2f994eae7ebab04a",
+        "size_bytes": 445709
+      },
+      "watercraft_idx1061.png": {
+        "sha256": "c7de6d2e26196d055639b7a405ea054a8cd71323ebbe393b24a3fa9cc930f7ab",
+        "size_bytes": 316877
+      }
+    },
+    "CompletionOnly": {
+      "plane_idx3.png": {
+        "sha256": "675d382ae7a91d236005d4322352bcf7ee71b6bd37f9fc9e02924fc9500a75eb",
+        "size_bytes": 73205
+      },
+      "cabinet_idx160.png": {
+        "sha256": "6f5ab3878cb5916c074f8234d767eefa8fa49d8d0e13dc7019b7a915be455eec",
+        "size_bytes": 666677
+      },
+      "car_idx309.png": {
+        "sha256": "14ff42163fcc2dbbb073b23ec5376627f819dc4122e9393533b8586403b0954e",
+        "size_bytes": 374726
+      },
+      "chair_idx452.png": {
+        "sha256": "f12dbb29bf9a50d6d5aca81397cc064102ad87761b712e7b641064626077fde9",
+        "size_bytes": 528983
+      },
+      "lamp_idx602.png": {
+        "sha256": "21c5bd3960c22592ebea9a91716d2021bece6f243b9e7ba82898ec91fb971221",
+        "size_bytes": 231150
+      },
+      "couch_idx753.png": {
+        "sha256": "058539c4c8bb11c01b8f5056a97efc1e8b17c64832a2747ac948ef946b7e8de2",
+        "size_bytes": 488709
+      },
+      "table_idx909.png": {
+        "sha256": "07a89b3ba9d809417e64782c362d826ea88014e440c5dcf3475d23d6ba810440",
+        "size_bytes": 446130
+      },
+      "watercraft_idx1061.png": {
+        "sha256": "632542dbfe969d91c62107bfddf09edd8b51943c69cef2b59a8ede67c47d4ca2",
+        "size_bytes": 321297
+      }
+    },
+    "Full": {
+      "plane_idx3.png": {
+        "sha256": "f39a9693f96abaa2a54da8071d35187e1c4bbd580d120d362d2d14e414401ffc",
+        "size_bytes": 66806
+      },
+      "cabinet_idx160.png": {
+        "sha256": "56fd6051887d307adfe217c2c8b5e1c49ebac1c87b4dfcf5d8a0d367268d4584",
+        "size_bytes": 667841
+      },
+      "car_idx309.png": {
+        "sha256": "539338f550ecaf3bfa098a83c329aa8ca298862dc016bcf445a88b9a3a59351f",
+        "size_bytes": 375840
+      },
+      "chair_idx452.png": {
+        "sha256": "6dd85f61ae44fc608381981d593f51e8f33147cc561a9f433d84d97bf58fff43",
+        "size_bytes": 515072
+      },
+      "lamp_idx602.png": {
+        "sha256": "37078782d52834d2e8fa6478b821464c5a60a31f574550a2c4ee67ccd6dcb915",
+        "size_bytes": 228645
+      },
+      "couch_idx753.png": {
+        "sha256": "4ed427e9d1762d38cf6b9a24517d4339dd9906db1ede1bdc52867101cbc7bee3",
+        "size_bytes": 485804
+      },
+      "table_idx909.png": {
+        "sha256": "a10c86189bc05a2e3441fcb5242afd1d902c84d0ae1990eee68ecd1f567243ff",
+        "size_bytes": 439284
+      },
+      "watercraft_idx1061.png": {
+        "sha256": "31355b5ed4465f965ea92b2f96617243e9f13a587875c36334af9eb94d99d93b",
+        "size_bytes": 326508
+      }
+    },
+    "MBB-Net": {
+      "plane_idx3.png": {
+        "sha256": "8852fc060f5a1f7c0ec47d2b26d6e6e25797560bb42a204ef4becb761929cf89",
+        "size_bytes": 126598
+      },
+      "cabinet_idx160.png": {
+        "sha256": "b9819290863f6bbbf9632fd514ee883de03dc8dbc520407942490703433e83d1",
+        "size_bytes": 1238249
+      },
+      "car_idx309.png": {
+        "sha256": "38da1ce3704d8127fb6212ca08d0e9572749accbbaa6347c77924da3245650df",
+        "size_bytes": 713403
+      },
+      "chair_idx452.png": {
+        "sha256": "7963b424416f9ab68b9b7fe529d5fe9b809405613d41c1cf989a30f6cdfca712",
+        "size_bytes": 971519
+      },
+      "lamp_idx602.png": {
+        "sha256": "569875f08fadb74413ced126f3e1287dfb475285d3bbf74d0776bd4cf6e8c4bb",
+        "size_bytes": 412389
+      },
+      "couch_idx753.png": {
+        "sha256": "d9ffd04a8efa0da6259ed95d2964f1066e8c7ec51a9c2f619df831092459cd17",
+        "size_bytes": 893104
+      },
+      "table_idx909.png": {
+        "sha256": "f4d5413be893887c26a0925f2e88051778fe697f0340fe331a7d6e6e3e518cb4",
+        "size_bytes": 835150
+      },
+      "watercraft_idx1061.png": {
+        "sha256": "ba20a23deaf5cd2f5eb172d0255cd97f238ec836ee789e0cce26da6cfefc0f84",
+        "size_bytes": 600179
+      }
+    }
+  }
+}

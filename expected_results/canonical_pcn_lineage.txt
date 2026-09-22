@@ -72,6 +72,10 @@ Historical results
 ------------------
 The old ~7.43 PCN result is NOT part of the final release contract.
 
-Historical PCN G2S / Full / S2G / No-Bridge experiments retain their
+Historical PCN G2S / S2G / No-Bridge experiments retain their
 own original definitions and must NOT be silently replaced by the
 canonical Ours forward.
+
+The released PCN Full checkpoint also retains its historical
+sequential/cascaded bidirectional definition and must NOT be silently
+replaced by the canonical Ours forward.

@@ -17,6 +17,14 @@ TASKS = {
         ROOT / "tools/test/eval_pcn.py",
         [],
     ),
+    "pcn-vis": (
+        ROOT / "tools/visualization/plot_pcn_qualitative.py",
+        [],
+    ),
+    "pcn-vis-infer": (
+        ROOT / "tools/visualization/render_pcn_paper_modes.py",
+        [],
+    ),
     "shapenet55-test": (
         ROOT / "tools/test/eval_shapenet55.py",
         [],
@@ -87,13 +95,16 @@ def print_help() -> None:
         print(f"  {task}")
     print()
     print("Examples:")
-    print("  python main.py pcn-train --data_root /path/to/PCN")
+    print("  python main.py pcn-train --mode ours --data_root /path/to/PCN")
     print("  python main.py shapenet55-train --mode ours --data-root /path/to/ShapeNet55")
     print("  python main.py shapenet55-test --dataset 55 --mode ours --data_root /path/to/ShapeNet55")
-    print("  python main.py pcn-test --data_root /path/to/PCN --checkpoint checkpoints/PCN/pcn_mbb_ablation_ours_best.pth")
+    print("  python main.py pcn-test --mode completionOnly full ours --data_root /path/to/PCN")
     print("  python main.py shapenet55-pcgrad-train --mbb_mode ours --data_root /path/to/ShapeNet55")
     print("  python main.py shapenet34-train --mode ours --data_root /path/to/ShapeNet")
     print("  python main.py symm-train --variant ours --pretrained checkpoints/SymmCompletion/ShapeNet55/baseline/ckpt-best.pth")
+    print("  python main.py pcn-vis")
+    print("  python main.py pcn-vis-infer --mode ours --data_root /path/to/PCN")
+    print("  python main.py kitti-infer --mode ours --fixed_input_dir /path/to/KITTI_fixed_inputs --output_dir outputs/KITTI/MBB-Net")
     print("  python main.py table4")
     print("  python main.py fig5")
     print()

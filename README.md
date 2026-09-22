@@ -90,10 +90,11 @@ docs/reproducibility/KITTI.md
 
 ### PCN
 
-Train the canonical PCN MBB-Net configuration with:
+Train a paper-facing PCN configuration with:
 
 ```bash
 python main.py pcn-train \
+    --mode ours \
     --data_root <PCN_ROOT>
 ```
 
@@ -143,8 +144,8 @@ python tools/train/train_shapenet55.py --help
 
 ```bash
 python main.py pcn-test \
-    --data_root <PCN_ROOT> \
-    --checkpoint checkpoints/PCN/pcn_mbb_ablation_ours_best.pth
+    --mode completionOnly full ours \
+    --data_root <PCN_ROOT>
 ```
 
 ### ShapeNet-55
@@ -191,8 +192,8 @@ python main.py shapenet21-test \
 
 ```bash
 python main.py kitti-infer \
+    --mode ours \
     --fixed_input_dir <KITTI_FIXED_INPUT_DIR> \
-    --checkpoint checkpoints/PCN/pcn_mbb_ablation_ours_best.pth \
     --output_dir outputs/KITTI/MBB_Ours_PCN_FixedInput
 ```
 

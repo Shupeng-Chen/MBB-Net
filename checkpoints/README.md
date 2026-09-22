@@ -2,19 +2,21 @@
 
 The pretrained checkpoint binaries are distributed separately from the Git repository because the complete set is large.
 
+The paper-complete release contains **17 checkpoint binaries**.
+
 After downloading the checkpoint package or GitHub Release assets, place the files under `checkpoints/` using the exact relative paths listed below.
 
 Verify all files with:
 
 ```bash
-cd checkpoints
-sha256sum -c MANIFEST.sha256
+sha256sum -c checkpoints/MANIFEST.sha256
 ```
 
 | Checkpoint | Size (MiB) | SHA256 |
 |---|---:|---|
 | `PCN/pcn_mbb_ablation_ours_best.pth` | 82.65 | `b32d7a03dd759741ded8ca22b4fb48e60d7f5039cee120050229875058f36940` |
 | `PCN/pcn_mbb_ablation_comp_only_best.pth` | 73.84 | `f29e541ff5b581bc99129f358bd64a9aad74498d781eb89dbe160df88a7e2b33` |
+| `PCN/pcn_mbb_ablation_full_best.pth` | 82.65 | `73bdc88614f038c66437820ddb77b074f50dff1453ac85ad99a2fd74947a731d` |
 | `ShapeNet/ShapeNet34/baseline/best_model.pth` | 73.77 | `ad13d0a08ef7f454a53e8527d93bc8ccd85f607f22601c866cc8219b35ed2b8c` |
 | `ShapeNet/ShapeNet34/no_bridge/best_model.pth` | 82.61 | `ac1da7463bf80183a702292a66435c842adb621026f334fbb6e86c9de2702baf` |
 | `ShapeNet/ShapeNet34/ours/best_model.pth` | 82.61 | `1f5bd6003dd2516d0d572ba4d113a3823d34278679c3f3b77c8e908c9e8c16a7` |
@@ -30,14 +32,27 @@ sha256sum -c MANIFEST.sha256
 | `SymmCompletion/ShapeNet55/no_bridge/ckpt-best.pth` | 51.64 | `5f95558396884735ac4885eb82a73fa255e34854a2ec3210137f1078e52d227b` |
 | `SymmCompletion/ShapeNet55/ours/ckpt-best.pth` | 60.17 | `cbac28ca63f2cfb0d24c07e1ed606d5e6b4d07d758909287413ca4837fccb8bc` |
 
-## KITTI zero-shot checkpoint
+## PCN paper-facing checkpoints
 
-KITTI is evaluated zero-shot; there is no KITTI-specific MBB-Net checkpoint.
+The public PCN implementation exposes three paper-facing modes:
 
-Use:
-`checkpoints/PCN/pcn_mbb_ablation_ours_best.pth`
+- `completionOnly`: `checkpoints/PCN/pcn_mbb_ablation_comp_only_best.pth`
+- `full`: `checkpoints/PCN/pcn_mbb_ablation_full_best.pth`
+- `ours`: `checkpoints/PCN/pcn_mbb_ablation_ours_best.pth`
 
-SHA256:
-`b32d7a03dd759741ded8ca22b4fb48e60d7f5039cee120050229875058f36940`
+`CompletionOnly` contains only the completion branch.
+
+`Full` is the historical sequential/cascaded bidirectional bridge without stop-gradient.
+
+`Ours` is the final canonical parallel MBB configuration, with stop-gradient only on the G2S geometry source.
+
+## KITTI zero-shot checkpoints
+
+KITTI is evaluated zero-shot using PCN-trained checkpoints. There is no KITTI-specific checkpoint and no KITTI fine-tuning.
+
+Paper-facing internal models:
+
+- CompletionOnly: `checkpoints/PCN/pcn_mbb_ablation_comp_only_best.pth`
+- MBB-Net: `checkpoints/PCN/pcn_mbb_ablation_ours_best.pth`
 
 The exact 2,401 frozen KITTI inputs are distributed separately as `MBB-Net-KITTI-fixed-inputs.tar.gz`.

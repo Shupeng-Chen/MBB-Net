@@ -14,13 +14,41 @@ import numpy as np
 import torch
 from tqdm import tqdm
 
-from models.pcn_model import MBB_Model_PCN
+from models.pcn_modes import build_pcn_model
 
 
-EXPECTED_CKPT_SHA256 = (
-    "b32d7a03dd759741ded8ca22b4fb48e"
-    "60d7f5039cee120050229875058f36940"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+KITTI_PAPER_MODES = (
+    "completionOnly",
+    "ours",
 )
+
+DEFAULT_CHECKPOINTS = {
+    "completionOnly": (
+        PROJECT_ROOT
+        / "checkpoints"
+        / "PCN"
+        / "pcn_mbb_ablation_comp_only_best.pth"
+    ),
+    "ours": (
+        PROJECT_ROOT
+        / "checkpoints"
+        / "PCN"
+        / "pcn_mbb_ablation_ours_best.pth"
+    ),
+}
+
+EXPECTED_CKPT_SHA256 = {
+    "completionOnly": (
+        "f29e541ff5b581bc99129f358bd64a9a"
+        "ad74498d781eb89dbe160df88a7e2b33"
+    ),
+    "ours": (
+        "b32d7a03dd759741ded8ca22b4fb48e"
+        "60d7f5039cee120050229875058f36940"
+    ),
+}
 
 CFG = {
     "NUM_CLASSES": 8,
@@ -209,8 +237,19 @@ def main():
     parser = argparse.ArgumentParser(
         description=(
             "Portable zero-shot KITTI inference "
-            "for released canonical PCN MBB-Net."
+            "for released PCN CompletionOnly and MBB-Net modes."
         )
+    )
+
+    parser.add_argument(
+        "--mode",
+        required=True,
+        choices=KITTI_PAPER_MODES,
+        help=(
+            "PCN-trained paper mode to evaluate zero-shot on KITTI. "
+            "completionOnly = completion branch only; "
+            "ours = canonical MBB-Net."
+        ),
     )
 
     parser.add_argument(
@@ -222,7 +261,11 @@ def main():
     parser.add_argument(
         "--checkpoint",
         type=Path,
-        required=True,
+        default=None,
+        help=(
+            "Optional checkpoint override. If omitted, the released "
+            "checkpoint for --mode is used and its SHA256 is enforced."
+        ),
     )
 
     parser.add_argument(
@@ -268,8 +311,20 @@ def main():
         .resolve()
     )
 
+    mode = args.mode
+
+    using_default_checkpoint = (
+        args.checkpoint is None
+    )
+
+    checkpoint_arg = (
+        DEFAULT_CHECKPOINTS[mode]
+        if using_default_checkpoint
+        else args.checkpoint
+    )
+
     ckpt = (
-        args.checkpoint
+        checkpoint_arg
         .expanduser()
         .resolve()
     )
@@ -315,18 +370,48 @@ def main():
         ckpt_sha,
     )
 
-    if ckpt_sha != EXPECTED_CKPT_SHA256:
+    expected_ckpt_sha = (
+        EXPECTED_CKPT_SHA256[mode]
+    )
+
+    matches_released_checkpoint = (
+        ckpt_sha == expected_ckpt_sha
+    )
+
+    if (
+        using_default_checkpoint
+        and not matches_released_checkpoint
+    ):
         raise RuntimeError(
-            "Canonical checkpoint SHA256 mismatch."
+            f"Released {mode} checkpoint SHA256 mismatch. "
+            f"Expected {expected_ckpt_sha}, got {ckpt_sha}."
+        )
+
+    if using_default_checkpoint:
+        print(
+            f"[PASS] released {mode} checkpoint SHA256"
+        )
+    else:
+        print(
+            "[INFO] custom checkpoint supplied; "
+            "released-checkpoint SHA enforcement disabled."
+        )
+        print(
+            "released checkpoint SHA256 =",
+            expected_ckpt_sha,
+        )
+        print(
+            "matches released checkpoint =",
+            matches_released_checkpoint,
         )
 
     seed_all(
         args.seed
     )
 
-    model = MBB_Model_PCN(
+    model = build_pcn_model(
         CFG,
-        use_mbb=True,
+        mode,
     ).cuda()
 
     state = load_state_dict(
@@ -349,11 +434,16 @@ def main():
     model.eval()
 
     print(
-        "[PASS] checkpoint strict-load"
+        f"[PASS] checkpoint strict-load: "
+        f"{len(state)} tensors"
     )
 
     print(
         f"KITTI samples to run = {len(inputs)}"
+    )
+
+    print(
+        f"Mode: {mode}"
     )
 
     print(
@@ -468,8 +558,25 @@ def main():
             written += 1
 
     manifest = {
+        "mode": mode,
+        "display_name": (
+            "CompletionOnly"
+            if mode == "completionOnly"
+            else "MBB-Net"
+        ),
         "checkpoint": str(ckpt),
         "checkpoint_sha256": ckpt_sha,
+        "checkpoint_source": (
+            "released_default"
+            if using_default_checkpoint
+            else "custom_override"
+        ),
+        "released_checkpoint_sha256": (
+            expected_ckpt_sha
+        ),
+        "matches_released_checkpoint": (
+            matches_released_checkpoint
+        ),
         "seed": args.seed,
         "num_selected_samples": len(inputs),
         "written": written,
