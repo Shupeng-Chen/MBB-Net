@@ -48,6 +48,38 @@ Prepare the original datasets according to their official releases.
 
 Dataset files are not redistributed in this repository.
 
+### Dataset code layout
+
+Dataset-related implementations are distributed across the paper-specific reproducibility paths rather than being collected in a single directory:
+
+```text
+datasets/PCN_dataset.py
+    PCN training loader
+
+data/pcn_official_eval.py
+    PCN paper-facing evaluation loader
+
+data/shapenet55_train.py
+    ShapeNet-55 canonical training loader
+
+data/shapenet55_official_eval.py
+    ShapeNet-55 official evaluation loader
+
+data/shapenet34_21_official_eval.py
+    ShapeNet-34 / ShapeNet-Unseen21 evaluation loader
+
+reproduce/ShapeNet/ShapeNet34_21/support/dataset.py
+    ShapeNet-34 training loader
+
+reproduce/ShapeNet/ShapeNet55/pcgrad_support/dataset.py
+    ShapeNet-55 PCGrad training loader
+
+third_party/symmcompletion/datasets/
+    Dataset implementations used by the SymmCompletion transfer experiments
+```
+
+The `data/PCN/`, `data/ShapeNet55-34/`, and `data/KITTI/` directories are placeholders for externally downloaded benchmark data and therefore do not contain the full datasets in Git.
+
 ## 2. Set dataset paths
 
 ### PCN
