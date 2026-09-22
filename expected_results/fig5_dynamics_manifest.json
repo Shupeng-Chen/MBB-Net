@@ -406,5 +406,10 @@
       "epoch": 300,
       "accuracy_percent": 79.5
     }
+  },
+  "public_compact_artifact": {
+    "path": "expected_results/Analysis/Fig5/training_dynamics.json",
+    "sha256": "0ee06cb6316b37f4acd87826bdc48accb3964f6e41d6e4754ad83241cb021d64",
+    "note": "Contains the exact parsed evaluation records used by the public Figure-5 plotter. SHA256 values of the original raw training logs remain recorded above for provenance."
   }
 }

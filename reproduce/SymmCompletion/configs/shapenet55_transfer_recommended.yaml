@@ -1,0 +1,35 @@
+dataset: shapenet55
+formal_variants:
+- no_bridge
+- full
+- ours
+initialization:
+  official_checkpoint: checkpoints/SymmCompletion/ShapeNet55/baseline/ckpt-best.pth
+training:
+  tune_policy: full
+  epochs: 20
+  batch_size: 16
+  alpha: 0.0004
+  learning_rate: 0.0001
+  backbone_lr_scale: 0.1
+  freeze_backbone_epochs: 5
+  weight_decay: 0.0005
+  warmup_epochs: 5
+  val_freq: 5
+  eval_batch_size: 8
+  num_workers: 8
+  minimum_lr_ratio: 0.05
+  gradient_clip: 1.0
+  dense_val_last: 20
+  seed: 42
+  deterministic: false
+selection:
+  metric: taxonomy_macro_CDL2
+  split: existing_SymmCompletion_test_as_validation_pipeline
+final_test:
+  protocol: official_8_fixed_views_FPS_2048
+  difficulties:
+  - simple
+  - moderate
+  - hard
+  classification: object_level_mean_of_8_logits

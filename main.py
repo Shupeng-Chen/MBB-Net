@@ -33,6 +33,26 @@ TASKS = {
         ROOT / "tools/test/eval_shapenet34_21.py",
         ["--dataset", "21"],
     ),
+    "shapenet55-pcgrad-train": (
+        ROOT / "tools/train/train_shapenet55_pcgrad.py",
+        [],
+    ),
+    "shapenet55-pcgrad-test": (
+        ROOT / "tools/test/eval_shapenet55_pcgrad.py",
+        [],
+    ),
+    "shapenet34-train": (
+        ROOT / "tools/train/train_shapenet34.py",
+        ["--dataset", "34"],
+    ),
+    "symm-train": (
+        ROOT / "tools/train/train_symm_transfer.py",
+        [],
+    ),
+    "symm-test": (
+        ROOT / "tools/test/eval_symm_transfer.py",
+        [],
+    ),
     "kitti-infer": (
         ROOT / "tools/test/infer_kitti.py",
         [],
@@ -47,6 +67,10 @@ TASKS = {
     ),
     "fig5": (
         ROOT / "tools/analysis/verify_fig5.py",
+        [],
+    ),
+    "fig5-plot": (
+        ROOT / "tools/analysis/plot_fig5.py",
         [],
     ),
 }
@@ -67,6 +91,9 @@ def print_help() -> None:
     print("  python main.py shapenet55-train --mode ours --data-root /path/to/ShapeNet55")
     print("  python main.py shapenet55-test --dataset 55 --mode ours --data_root /path/to/ShapeNet55")
     print("  python main.py pcn-test --data_root /path/to/PCN --checkpoint checkpoints/PCN/pcn_mbb_ablation_ours_best.pth")
+    print("  python main.py shapenet55-pcgrad-train --mbb_mode ours --data_root /path/to/ShapeNet55")
+    print("  python main.py shapenet34-train --mode ours --data_root /path/to/ShapeNet")
+    print("  python main.py symm-train --variant ours --pretrained checkpoints/SymmCompletion/ShapeNet55/baseline/ckpt-best.pth")
     print("  python main.py table4")
     print("  python main.py fig5")
     print()

@@ -206,6 +206,56 @@ python main.py kitti-eval \
     --input_check strict
 ```
 
+## 5. Additional paper experiments
+
+### ShapeNet-55 + PCGrad
+
+Train the PCGrad comparison:
+```bash
+python main.py shapenet55-pcgrad-train --mbb_mode ours --data_root /path/to/ShapeNet55
+```
+
+Evaluate the released PCGrad checkpoint:
+```bash
+python main.py shapenet55-pcgrad-test --data_root /path/to/ShapeNet55 --checkpoint checkpoints/ShapeNet/ShapeNet55/pcgrad_ours_aligned/best_model.pth
+```
+
+### ShapeNet-34 / ShapeNet-Unseen21
+
+Train MBB-Net on the 34 seen categories:
+```bash
+python main.py shapenet34-train --mode ours --data_root /path/to/ShapeNet --split_root data/splits
+```
+
+Use `shapenet34-test` for Seen-34 evaluation and `shapenet21-test` for zero-shot Unseen-21 completion evaluation.
+
+### SymmCompletion transfer
+
+The required SymmCompletion code is vendored under `third_party/symmcompletion/`.
+The released ShapeNet-55 transfer protocol uses 20 epochs, alpha=0.0004, batch size 16, learning rate 1e-4, backbone LR scale 0.1, five warm-up epochs, and seed 42.
+
+```bash
+python main.py symm-train --variant ours --pretrained checkpoints/SymmCompletion/ShapeNet55/baseline/ckpt-best.pth --shapenet_index_root /path/to/ShapeNet-55 --shapenet_pc_root /path/to/shapenet_pc
+```
+
+```bash
+python main.py symm-test --variant ours --pretrained checkpoints/SymmCompletion/ShapeNet55/baseline/ckpt-best.pth --checkpoint checkpoints/SymmCompletion/ShapeNet55/ours/ckpt-best.pth --shapenet_index_root /path/to/ShapeNet-55 --shapenet_pc_root /path/to/shapenet_pc
+```
+
+### Figure 5
+
+Verify the released Figure-5 statistics:
+```bash
+python main.py fig5
+```
+
+Regenerate Figure 5:
+```bash
+python main.py fig5-plot
+```
+
+The public `training_dynamics.json` stores the exact 76 evaluation records parsed from each of the four original training logs. SHA256 hashes of those original logs are retained in `expected_results/fig5_dynamics_manifest.json`.
+
 # Pretrained Models
 
 Checkpoint binaries are distributed separately from the Git source repository.
