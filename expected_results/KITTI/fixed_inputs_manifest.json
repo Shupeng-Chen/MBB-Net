@@ -1,0 +1,32 @@
+{
+  "experiment": "MBB-Net KITTI zero-shot completion",
+  "distribution_artifact": "MBB-Net-KITTI-fixed-inputs.tar.gz",
+  "archive_sha256": "adcacef8a71f4e49f8ec4d22c8d365eedf5eb6215483e31dc090fc6978400a76",
+  "file_pattern": "<sample_id>_input.npy",
+  "sample_count": 2401,
+  "input_points": 2048,
+  "input_shape": [
+    2048,
+    3
+  ],
+  "dtypes": [
+    "float32"
+  ],
+  "checkpoint": {
+    "path": "checkpoints/PCN/pcn_mbb_ablation_ours_best.pth",
+    "sha256": "b32d7a03dd759741ded8ca22b4fb48e60d7f5039cee120050229875058f36940"
+  },
+  "protocol": {
+    "source_training": "PCN",
+    "kitti_finetuning": false,
+    "shapenetcars_finetuning": false,
+    "target_domain_adaptation": false,
+    "output_points": 16384,
+    "seed": 42
+  },
+  "paper_metrics": {
+    "Fidelity_L2_x1000": 1.1513,
+    "MMD_CD_L2_x1000": 0.7891
+  },
+  "integrity_manifest": "expected_results/KITTI/fixed_inputs.sha256"
+}

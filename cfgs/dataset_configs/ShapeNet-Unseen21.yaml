@@ -1,0 +1,7 @@
+NAME: ShapeNet-Unseen21
+PC_PATH: data/ShapeNet55-34/shapenet_pc
+SPLIT_ROOT: data/splits
+TRAINED_CLASSES: 34
+EVAL_CLASSES: 21
+N_POINTS: 8192
+EVAL_ONLY: true

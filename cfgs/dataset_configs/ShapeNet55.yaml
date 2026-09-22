@@ -1,0 +1,5 @@
+NAME: ShapeNet55
+PC_PATH: data/ShapeNet55-34/shapenet_pc
+SPLIT_ROOT: data/splits
+NUM_CLASSES: 55
+N_POINTS: 8192

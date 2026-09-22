@@ -28,3 +28,15 @@ sha256sum -c MANIFEST.sha256
 | `SymmCompletion/ShapeNet55/baseline/ckpt-best.pth` | 152.35 | `137ad2fac429146832f3c3b2fd5719a24770143f65f5699ab665c143a612f923` |
 | `SymmCompletion/ShapeNet55/no_bridge/ckpt-best.pth` | 51.64 | `5f95558396884735ac4885eb82a73fa255e34854a2ec3210137f1078e52d227b` |
 | `SymmCompletion/ShapeNet55/ours/ckpt-best.pth` | 60.17 | `cbac28ca63f2cfb0d24c07e1ed606d5e6b4d07d758909287413ca4837fccb8bc` |
+
+## KITTI zero-shot checkpoint
+
+KITTI is evaluated zero-shot; there is no KITTI-specific MBB-Net checkpoint.
+
+Use:
+`checkpoints/PCN/pcn_mbb_ablation_ours_best.pth`
+
+SHA256:
+`b32d7a03dd759741ded8ca22b4fb48e60d7f5039cee120050229875058f36940`
+
+The exact 2,401 frozen KITTI inputs are distributed separately as `MBB-Net-KITTI-fixed-inputs.tar.gz`.

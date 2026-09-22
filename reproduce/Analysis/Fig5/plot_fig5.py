@@ -754,3 +754,22 @@ print("  - panel (b) labels shifted left/right")
 print("  - higher export quality (PDF + 1000 dpi PNG)")
 print("  - panel (b) y-axis fixed to [0, 0.72]")
 print("\nDone.")
+
+# Public-release CSV newline normalization
+# Python's csv module defaults to CRLF. Normalize the generated public
+# statistics artifact to LF so repeated regeneration is Git-clean.
+from pathlib import Path as _ReleasePath
+
+_release_csv = (
+    _ReleasePath(__file__).resolve().parents[3]
+    / "assets"
+    / "fig5"
+    / "Fig5_ShapeNet55_Gradient_Statistics_FINAL.csv"
+)
+
+if _release_csv.is_file():
+    _release_bytes = _release_csv.read_bytes()
+    if b"\r\n" in _release_bytes:
+        _release_csv.write_bytes(
+            _release_bytes.replace(b"\r\n", b"\n")
+        )
