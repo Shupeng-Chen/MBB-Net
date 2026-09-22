@@ -14,6 +14,7 @@ sha256sum -c MANIFEST.sha256
 | Checkpoint | Size (MiB) | SHA256 |
 |---|---:|---|
 | `PCN/pcn_mbb_ablation_ours_best.pth` | 82.65 | `b32d7a03dd759741ded8ca22b4fb48e60d7f5039cee120050229875058f36940` |
+| `PCN/pcn_mbb_ablation_comp_only_best.pth` | 73.84 | `f29e541ff5b581bc99129f358bd64a9aad74498d781eb89dbe160df88a7e2b33` |
 | `ShapeNet/ShapeNet34/baseline/best_model.pth` | 73.77 | `ad13d0a08ef7f454a53e8527d93bc8ccd85f607f22601c866cc8219b35ed2b8c` |
 | `ShapeNet/ShapeNet34/no_bridge/best_model.pth` | 82.61 | `ac1da7463bf80183a702292a66435c842adb621026f334fbb6e86c9de2702baf` |
 | `ShapeNet/ShapeNet34/ours/best_model.pth` | 82.61 | `1f5bd6003dd2516d0d572ba4d113a3823d34278679c3f3b77c8e908c9e8c16a7` |

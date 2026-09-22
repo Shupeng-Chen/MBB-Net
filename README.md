@@ -38,7 +38,7 @@ sh extensions/install.sh
 # Training and Testing
 
 ## 1. Download datasets
-\nDataset preparation and directory layouts are documented in [DATASET.md](DATASET.md).
+Dataset preparation and directory layouts are documented in [DATASET.md](DATASET.md).
 
 Prepare the original datasets according to their official releases.
 
