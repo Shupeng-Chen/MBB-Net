@@ -7,7 +7,7 @@
   "pcn": {
     "mbb": {
       "cd_l1_x1000_exact": 7.136179683,
-      "cd_l1_x1000_paper": 7.13,
+      "cd_l1_x1000_paper": 7.14,
       "f1_at_1pct_exact": 0.7973017784,
       "accuracy_exact": 0.9508333333,
       "accuracy_percent_paper": 95.08
