@@ -1,7 +1,6 @@
 # MBB-Net
 
-### MBB-Net: Asymmetric Decoupling Bidirectional Bridge for Point Cloud Completion and Classification
-
+### MBB-Net: An Asymmetrically Decoupled Bidirectional Bridge for Joint Point Cloud Completion and Classification
 
 This repository provides the official PyTorch implementation of **MBB-Net**, a multi-task framework for joint point cloud completion and classification.
 
@@ -276,14 +275,14 @@ python main.py symm-train --variant ours --pretrained checkpoints/SymmCompletion
 python main.py symm-test --variant ours --pretrained checkpoints/SymmCompletion/ShapeNet55/baseline/ckpt-best.pth --checkpoint checkpoints/SymmCompletion/ShapeNet55/ours/ckpt-best.pth --shapenet_index_root /path/to/ShapeNet-55 --shapenet_pc_root /path/to/shapenet_pc
 ```
 
-### Figure 5
+### Figure 4
 
-Verify the released Figure-5 statistics:
+Verify the released Figure-4 statistics:
 ```bash
 python main.py fig5
 ```
 
-Regenerate Figure 5:
+Regenerate Figure 4:
 ```bash
 python main.py fig5-plot
 ```
@@ -325,7 +324,7 @@ Verify the reported complexity table:
 python main.py table4
 ```
 
-Verify the released Figure-5 gradient-interaction statistics and checkpoint provenance:
+Verify the released Figure-4 gradient-interaction statistics and checkpoint provenance:
 
 ```bash
 python main.py fig5
